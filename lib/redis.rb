@@ -1005,6 +1005,7 @@ class Redis
   # @return [Fixnum] the length of the list after the push operation
   def lpush(key, value)
     synchronize do |client|
+      puts "LPUSH: k:#{key} - v:#{value}"
       client.call([:lpush, key, value])
     end
   end
